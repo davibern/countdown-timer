@@ -15,10 +15,15 @@ function countDown() {
     const mins = Math.floor(totalSeconds / 60) % 60;
     const seconds = Math.floor(totalSeconds % 60);
 
-    daysEl.innerHTML = days;
-    hoursEl.innerHTML = hours;
-    minsEl.innerHTML = mins;
-    secondsEl.innerHTML = seconds;
+    daysEl.innerHTML = formatTime(days);
+    hoursEl.innerHTML = formatTime(hours);
+    minsEl.innerHTML = formatTime(mins);
+    secondsEl.innerHTML = formatTime(seconds);
+}
+
+// Formatear la fecha incluyendo el 0 por delante
+function formatTime(time) {
+    return time < 10 ? (`0${time}`) : time;
 }
 
 // Initial call
